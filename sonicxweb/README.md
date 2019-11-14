@@ -8,7 +8,7 @@
 
 
 
-SonicxWeb aims to deliver a unified, seamless development experience influenced by Ethereum's [Web3](https://github.com/ethereum/web3.js/) implementation. We have taken the core ideas and expanded upon it to unlock the functionality of TRON's unique feature set along with offering new tools for integrating DApps in the browser, Node.js and IoT devices.
+SonicxWeb aims to deliver a unified, seamless development experience influenced by Ethereum's [Web3](https://github.com/ethereum/web3.js/) implementation. We have taken the core ideas and expanded upon it to unlock the functionality of Sonicx's unique feature set along with offering new tools for integrating DApps in the browser, Node.js and IoT devices.
 
 ## Compatibility
 - Version built for Node.js v6 and above
@@ -63,22 +63,9 @@ When you instantiate SonicxWeb you can define
 * eventServer
 * privateKey
 
-you can also set a
-
-* fullHost
-
-which works as a jolly. If you do so, though, the more precise specification has priority.
-Supposing you are using a server which provides everything, like TronGrid, you can instantiate SonicxWeb as:
 
 ```js
-const sonicxWeb = new SonicxWeb({
-    fullHost: 'https://full.sonicxhub.com/',
-    privateKey: 'your private key'
-})
-```
-
-For retro-compatibility, though, you can continue to use the old approach, where any parameter is passed separately:
-```js
+Usage:
 const sonicxWeb = new SonicxWeb(fullNode, solidityNode, eventServer, privateKey)
 
 ```
@@ -86,7 +73,7 @@ const sonicxWeb = new SonicxWeb(fullNode, solidityNode, eventServer, privateKey)
 
 If you are using different servers for anything, you can do
 ```js
-const tronWeb = new SonicxWeb({
+const sonicxWeb = new SonicxWeb({
     fullNode: 'https://fullnode.sonicxhub.com',
     solidityNode: 'https://solnode.sonicxhub.com'
     eventServer: 'https://event.sonicxhub.com/',
@@ -104,8 +91,6 @@ In order to contribute you can
 * install the dependencies — `npm i`
 * do your changes to the code
 * build the SonicxWeb dist files — `npm run build`
-* run a local private network using Tron Quickstart
-* run the tests — `npm test:node`
 * push your changes and open a pull request
 
 

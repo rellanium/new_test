@@ -1,0 +1,61 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'login' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose adduser before first PUT { _id: 'org.couchdb.user:sonicxchain',
+4 verbose adduser   name: 'sonicxchain',
+4 verbose adduser   password: 'XXXXX',
+4 verbose adduser   email: 'admin@sonicxscan.com',
+4 verbose adduser   type: 'user',
+4 verbose adduser   roles: [],
+4 verbose adduser   date: '2019-11-14T16:16:30.293Z' }
+5 verbose request uri https://registry.npmjs.org/-/user/org.couchdb.user:sonicxchain
+6 verbose request new user, so can't send auth
+7 info attempt registry request try #1 at 7:16:30 PM
+8 verbose request id eb57dfc924522fd2
+9 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:sonicxchain
+10 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND s-msk-proxy-01.global.bcs s-msk-proxy-01.global.bcs:8080
+11 info attempt registry request try #2 at 7:16:40 PM
+12 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:sonicxchain
+13 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND s-msk-proxy-01.global.bcs s-msk-proxy-01.global.bcs:8080
+14 info attempt registry request try #3 at 7:17:40 PM
+15 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:sonicxchain
+16 verbose request invalidating /home/ivan/.npm/registry.npmjs.org/-/user/org.couchdb.user_3Asonicxchain on PUT
+17 verbose adduser back [ { Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND s-msk-proxy-01.global.bcs s-msk-proxy-01.global.bcs:8080
+17 verbose adduser     at ClientRequest.onError (/usr/share/npm/node_modules/request/node_modules/tunnel-agent/index.js:174:17)
+17 verbose adduser     at Object.onceWrapper (events.js:315:30)
+17 verbose adduser     at emitOne (events.js:116:13)
+17 verbose adduser     at ClientRequest.emit (events.js:211:7)
+17 verbose adduser     at TLSSocket.socketErrorListener (_http_client.js:387:9)
+17 verbose adduser     at emitOne (events.js:116:13)
+17 verbose adduser     at TLSSocket.emit (events.js:211:7)
+17 verbose adduser     at emitErrorNT (internal/streams/destroy.js:64:8)
+17 verbose adduser     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+17 verbose adduser     at process._tickCallback (internal/process/next_tick.js:180:9) code: 'ECONNRESET' },
+17 verbose adduser   undefined,
+17 verbose adduser   undefined ]
+18 verbose stack Error: tunneling socket could not be established, cause=getaddrinfo ENOTFOUND s-msk-proxy-01.global.bcs s-msk-proxy-01.global.bcs:8080
+18 verbose stack     at ClientRequest.onError (/usr/share/npm/node_modules/request/node_modules/tunnel-agent/index.js:174:17)
+18 verbose stack     at Object.onceWrapper (events.js:315:30)
+18 verbose stack     at emitOne (events.js:116:13)
+18 verbose stack     at ClientRequest.emit (events.js:211:7)
+18 verbose stack     at TLSSocket.socketErrorListener (_http_client.js:387:9)
+18 verbose stack     at emitOne (events.js:116:13)
+18 verbose stack     at TLSSocket.emit (events.js:211:7)
+18 verbose stack     at emitErrorNT (internal/streams/destroy.js:64:8)
+18 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+18 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+19 verbose cwd /home/ivan/dev/new_test/sonicxweb
+20 error Linux 5.0.0-31-generic
+21 error argv "/usr/bin/node" "/usr/bin/npm" "login"
+22 error node v8.10.0
+23 error npm  v3.5.2
+24 error code ECONNRESET
+25 error network tunneling socket could not be established, cause=getaddrinfo ENOTFOUND s-msk-proxy-01.global.bcs s-msk-proxy-01.global.bcs:8080
+26 error network This is most likely not a problem with npm itself
+26 error network and is related to network connectivity.
+26 error network In most cases you are behind a proxy or have bad network settings.
+26 error network
+26 error network If you are behind a proxy, please make sure that the
+26 error network 'proxy' config is set properly.  See: 'npm help config'
+27 verbose exit [ 1, true ]
