@@ -1,24 +1,17 @@
 
 import logo from './logo.svg';
 import './App.css';
-
-
 import React, { Component } from 'react'
 import axios from 'axios'
+import SonicxWeb from 'sonicxweb'
 
-import TronWeb from 'tronweb'
-
-const HttpProvider = TronWeb.providers.HttpProvider;
-
-
+const HttpProvider = SonicxWeb.providers.HttpProvider;
 
 const fullNode = new HttpProvider('http://165.22.52.91:9190');
 const solidityNode = new HttpProvider('http://165.22.52.91:9191/');
-
-const eventServer = 'https://api.shasta.trongrid.io';
+const eventServer = 'http://178.128.215.209';
 const privateKey = 'da146374a75310b9666e834ee4ad0866d6f4035967bfc76217c5a495fff9f0d0';
 
-//
 export default class App extends Component {
     constructor() {
         super() 
@@ -28,18 +21,18 @@ export default class App extends Component {
         }
     }    async execSonicxWeb() {
 
-            const tronWeb = new TronWeb(
+        const sonicxWeb = new SonicxWeb(
                fullNode,
                solidityNode,
                eventServer,
                privateKey
             );
 
-            const userBalance = await tronWeb.trx.getNodeInfo();
-            console.log(userBalance);
+            const nodeInfo = await sonicxWeb.trx.getNodeInfo();
+            console.log(nodeInfo);
 
 
-            const nodes = await tronWeb.isConnected();
+            const nodes = await sonicxWeb.isConnected();
             const connected = !Object.entries(nodes).map(([name, connected]) => {
                 if (!connected)
                     console.error(`Error: ${name} is not connected`);
@@ -59,10 +52,9 @@ export default class App extends Component {
 render() {
     return (
         <div>
-            <h1>React App</h1>
+            <h1>Push Get Info and see console.log()</h1>
     {this.displayApp()}
     </div>
     )
    }
 }
-
